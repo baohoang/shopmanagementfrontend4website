@@ -23,15 +23,15 @@ var myApp = angular.module('ECSApp', [
     'ngFileUpload',
     'xeditable'
 ]);
-myApp.run(function ($rootScope, $location, $state, $localStorage, jwtHelper) {
-    $rootScope.$on('$stateChangeStart', function (evt, to, params) {
-        var token = $localStorage.token;
-        if (to.data.requireLogin && (!token || (token && jwtHelper.isTokenExpired(token)))) {
-            $state.go('login');
-            evt.preventDefault();
-        }
-    });
-});
+//myApp.run(function ($rootScope, $location, $state, $localStorage, jwtHelper) {
+//    $rootScope.$on('$stateChangeStart', function (evt, to, params) {
+//        var token = $localStorage.token;
+//        if (to.data.requireLogin && (!token || (token && jwtHelper.isTokenExpired(token)))) {
+//            $state.go('login');
+//            evt.preventDefault();
+//        }
+//    });
+//});
 myApp.run(function ($rootScope, $location, $state) {
     $rootScope.$on('$stateChangeStart', function (evt, to, params) {
         if (to.redirectTo) {
@@ -40,6 +40,8 @@ myApp.run(function ($rootScope, $location, $state) {
         }
     });
 });
+
+
 myApp.run(function(editableOptions,editableThemes) {
     editableThemes.bs3.inputClass = 'input-sm';
     editableThemes.bs3.buttonsClass = 'btn-sm';
@@ -47,5 +49,5 @@ myApp.run(function(editableOptions,editableThemes) {
 });
 
 myApp.run(function ($rootScope, $location, $state) {
-    $state.go('home');
+    $state.go('page');
 });

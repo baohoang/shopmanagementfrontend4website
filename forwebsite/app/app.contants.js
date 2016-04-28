@@ -10,3 +10,4 @@ myApp.constant("CONFIG", {
     "CURRENT_USER": "user",
     "PRODUCT_IMAGE_DEFAULT": "http://localhost:8086/upload/images/products/default.png"
 });
+//chứa các biến tĩnh ko thay đổi
