@@ -1,0 +1,51 @@
+<!--start_hungnd-->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/wow.min.js"></script>
+<!--end_hungnd-->
+<!--Start quang cao -->
+
+<script type="text/javascript">
+
+    function hide_float_left() {
+
+        var content = document.getElementById('float_content_left');
+        var hide = document.getElementById('hide_float_left');
+        if (content.style.display == "none"){
+            content.style.display = "block"; hide.innerHTML = '<a href="javascript:hide_float_left()">Tắt quảng cáo [X]</a>'; }
+        else { content.style.display = "none"; hide.innerHTML = '<a href="javascript:hide_float_left()">ECSSystem Website</a>';
+        }
+    }
+
+</script>
+
+<div class="float-ck" style="left: 0px" >
+    <div id="hide_float_left">
+        <a href="javascript:hide_float_left()">Tắt Quảng Cáo [X]</a></div>
+    <div id="float_content_left">
+        <img style="width:100%" src="images/blog/02.jpg" alt="">
+
+    </div>
+</div>
+<!--End quang cao -->
+<footer id="footer" class="midnight-blue">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                &copy; 2016 <a target="_blank" href="" title="Kênh bán hàng ECSSystem">ECSSystem Website</a>. All Rights Reserved.
+            </div>
+            <div class="col-sm-6">
+                <ul class="pull-right">
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Hỗ trợ</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer><!--/#footer-->
+
