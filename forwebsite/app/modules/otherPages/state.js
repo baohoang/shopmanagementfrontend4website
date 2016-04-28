@@ -8,7 +8,7 @@ myApp.config(['$stateProvider', function ($stateProvider) {
         templateUrl: '/modules/otherPages/views/dashboard.html',
         data: {
             pageTitle: 'DashBoard',
-            requireLogin: true
+            requireLogin: false
         },
         resolve: {
             loadMyFiles: function ($ocLazyLoad) {
