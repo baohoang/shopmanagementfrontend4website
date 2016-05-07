@@ -7,6 +7,6 @@
   "private": true,
   "dependencies": {
     "angular": "^1.5.3",
-    "angular-route": "^1.5.3",   
+    "angular-route": "^1.5.3"  
   }
 }
