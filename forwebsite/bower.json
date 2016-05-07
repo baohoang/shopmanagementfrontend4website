@@ -36,7 +36,7 @@
     "components-font-awesome": "*",
     "ng-file-upload-shim": "*",
     "ng-file-upload": "*",
-    "angular-xeditable": "*",
+    "angular-xeditable": "*"
 	
   }
 }
