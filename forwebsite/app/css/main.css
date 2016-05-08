@@ -2899,3 +2899,9 @@ position: fixed; bottom: 0px; z-index: 9000}
 #article{
 	margin-left:100px;
 }
+.input-group{
+  border: solid thin #e0e0e0;
+}
+.input-group .form-control:focus {
+  z-index: 3;
+}

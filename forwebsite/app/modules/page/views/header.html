@@ -4,12 +4,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-xs-4">
-                    <div class="top-number"><p><i class="fa fa-phone-square"></i>  +01688 929 947</p></div>
+                    <div class="top-number"><p><i class="fa fa-phone-square"></i> +01688 929 947</p></div>
                 </div>
                 <div class="col-sm-6 col-xs-8">
                     <div class="social">
                         <ul class="social-share">
-                            <li><a href="https://www.facebook.com/hung.chelsea.12" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/hung.chelsea.12" target="_blank"><i
+                                    class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
@@ -46,7 +47,8 @@
                     <li><a href="services.html">Website Mẫu</a></li>
                     <li><a href="portfolio.html">Bảng giá</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i
+                                class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="blog-item.html">Blog Single</a></li>
                             <li><a href="pricing.html">Pricing</a></li>
@@ -56,9 +58,101 @@
                     </li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact-us.html">Liên hệ</a></li>
+                    <li><a href="test.html" style="background-color: #7fc142" onclick="" data-toggle="modal"
+                           data-target="#myModal">Tạo website</a></li>
                 </ul>
             </div>
         </div><!--/.container-->
     </nav><!--/nav-->
 
 </header><!--/header-->
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" style="color: red;" data-dismiss="modal">&times;</button>
+                <center><h4 class="modal-title" style="color: #22a1e6;font-size: 1.9em;">Tạo website bán hàng miễn phí
+                    trong 30s</h4></center>
+                <center><h4 class="modal-title">Dùng thử 15 ngày phiên bản đầy đủ tính năng</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="width: 100%;">
+                    <div class="row">
+                        <form role="form">
+                            <div class="col-lg-6" style="width: 100%;">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="InputName" id="inputshop"
+                                               placeholder="Tên cửa hàng của bạn" required>
+                                        <span class="input-group-addon"><span
+                                                class="glyphicon glyphicon-asterisk"></span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group" style="width: 100%;">
+                                    <select class="form-control" id="sel1">
+                                        <option>--- Lựa chọn lĩnh vực kinh doanh ---</option>
+                                        <option>Máy tính kỹ thuật số</option>
+                                        <option>Mỹ phẩm</option>
+                                        <option>Quần áo</option>
+                                        <option>Thể thao</option>
+                                        <option>Giáo dục</option>
+                                        <option>Tin tức</option>
+                                    </select>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="inputName" name="inputName"
+                                               placeholder="Họ tên của bạn" required>
+                                        <span class="input-group-addon"><span
+                                                class="glyphicon glyphicon-asterisk"></span></span>
+                                        <input type="text" class="form-control" id="inputPhone" name="inputPhone"
+                                               placeholder="Số điện thoại của bạn" required>
+                                        <span class="input-group-addon"><span
+                                                class="glyphicon glyphicon-asterisk"></span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="inputAddress" name="inputAddress"
+                                               placeholder="Địa chỉ của bạn" required>
+                                        <span class="input-group-addon"><span
+                                                class="glyphicon glyphicon-asterisk"></span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" id="inputEmail" name="InputEmail"
+                                               placeholder="Email của bạn" required>
+                                        <span class="input-group-addon"><span
+                                                class="glyphicon glyphicon-asterisk"></span></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="inputPassword" name="inputPassword"
+                                               placeholder="Mật khẩu của bạn" required>
+                                        <span class="input-group-addon"><span
+                                                class="glyphicon glyphicon-asterisk"></span></span>
+                                    </div>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox"> Tôi đồng ý với <a>quy định sử dụng</a> & <a>chính sách bảo mật</a> của ECSSystem
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="padding: 10px 10px 20px;margin-top: 0px;">
+                <input type="submit" name="submit" id="submit" value="Tạo website của tôi" class="btn btn-primary center-block">
+            </div>
+        </div>
+
+    </div>
+</div>
