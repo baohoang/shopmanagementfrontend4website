@@ -58,7 +58,7 @@
                     </li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact-us.html">Liên hệ</a></li>
-                    <li><a href="test.html" style="background-color: #7fc142" onclick="" data-toggle="modal"
+                    <li><a href="" style="background-color: #7fc142" onclick="" data-toggle="modal"
                            data-target="#myModal">Tạo website</a></li>
                 </ul>
             </div>
@@ -81,78 +81,155 @@
             <div class="modal-body">
                 <div class="container" style="width: 100%;">
                     <div class="row">
-                        <form role="form">
+                        <form role="form" name="infoForm" novalidate>
                             <div class="col-lg-6" style="width: 100%;">
-                                <div class="form-group">
+                                <div class="form-group"
+                                     ng-class="{'has-error':infoForm.name_shop.$touched && infoForm.name_shop.$invalid }">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" name="InputName" id="inputshop"
-                                               placeholder="Tên cửa hàng của bạn" required>
+                                        <input type="text" class="form-control" name="name_shop" id="name_shop"
+                                               ng-model="subscriber.name_shop"
+                                               placeholder="Tên cửa hàng của bạn" required autofocus>
                                         <span class="input-group-addon"><span
                                                 class="glyphicon glyphicon-asterisk"></span></span>
                                     </div>
+                                    <div class="help-block" ng-messages="infoForm.name_shop.$error"
+                                         ng-show="infoForm.name_shop.$touched">
+                                        <label class="control-label" ng-show="infoForm.name_shop.$error.required">Bạn
+                                            chưa nhập tên cửa hàng của bạn</label>
+                                    </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group"
+                                     ng-class="{'has-error':infoForm.category_id.$touched && infoForm.category_id.$invalid }">
                                     <div class="input-group" style="width: 100%;">
-                                    <select class="form-control" id="sel1">
-                                        <option>--- Lựa chọn lĩnh vực kinh doanh ---</option>
-                                        <option>Máy tính kỹ thuật số</option>
-                                        <option>Mỹ phẩm</option>
-                                        <option>Quần áo</option>
-                                        <option>Thể thao</option>
-                                        <option>Giáo dục</option>
-                                        <option>Tin tức</option>
-                                    </select>
-                                        </div>
+                                        <select class="form-control" id="sel1" ng-model="suscriber.category_id"
+                                                name="category_id" required>
+                                            <option ng-selected="true" value="0">--- Lựa chọn lĩnh vực kinh doanh ---
+                                            </option>
+                                            <option value="1">Máy tính kỹ thuật số</option>
+                                            <option value="2">Mỹ phẩm</option>
+                                            <option value="3">Quần áo</option>
+                                            <option value="4">Thể thao</option>
+                                            <option value="5">Giáo dục</option>
+                                            <option value="6">Tin tức</option>
+                                        </select>
+                                    </div>
+                                    <div class="help-block" ng-show="infoForm.category_id.$touched"
+                                         ng-messages="infoForm.category_id.$error">
+                                        <label class="control-label" ng-show="infoForm.category_id.$error.required || suscriber.category_id == 0">Bạn
+                                            chưa chọn lĩnh vực kinh doanh</label>
+                                    </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group"
+                                     ng-class="{'has-error':infoForm.username.$touched && infoForm.username.$invalid || infoForm.phone.$touched && infoForm.phone.$invalid  }">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputName" name="inputName"
+                                        <input type="text" class="form-control" ng-model="subscriber.username"
+                                               id="username" name="username"
                                                placeholder="Họ tên của bạn" required>
                                         <span class="input-group-addon"><span
                                                 class="glyphicon glyphicon-asterisk"></span></span>
-                                        <input type="text" class="form-control" id="inputPhone" name="inputPhone"
+                                        <input type="number" class="form-control" ng-model="subscriber.phone" id="phone"
+                                               name="phone" ng-maxlength="12" ng-minlength="10"
                                                placeholder="Số điện thoại của bạn" required>
                                         <span class="input-group-addon"><span
                                                 class="glyphicon glyphicon-asterisk"></span></span>
                                     </div>
+                                    <div class="help-block"
+                                         ng-messages="infoForm.username.$error || infoForm.phone.$error"
+                                         ng-show="infoForm.username.$touched || infoForm.phone.$touched">
+                                        <label class="control-label" ng-show="infoForm.username.$error.required">Bạn
+                                            chưa nhập tên tài khoản</label>
+                                        <label class="control-label" style="padding-left: 20px;"
+                                               ng-show="infoForm.phone.$error.required">Bạn chưa nhập số điện
+                                            thoại</label>
+                                        <label class="control-label" style="padding-left: 20px;"
+                                               ng-show="infoForm.phone.$error.minlength || infoForm.phone.$error.maxlength">Số
+                                            điện thoại từ 10-12 số</label>
+                                    </div>
+
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group"
+                                     ng-class="{'has-error':infoForm.address.$touched && infoForm.address.$invalid}">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputAddress" name="inputAddress"
+                                        <input type="text" class="form-control" id="address" name="address"
+                                               ng-model="subscriber.address"
                                                placeholder="Địa chỉ của bạn" required>
                                         <span class="input-group-addon"><span
                                                 class="glyphicon glyphicon-asterisk"></span></span>
                                     </div>
+                                    <div class="help-block" ng-messages="infoForm.address.$error"
+                                         ng-show="infoForm.address.$touched">
+                                        <label class="control-label" ng-show="infoForm.address.$error.required">Bạn chưa
+                                            nhập địa chỉ</label>
+                                    </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group"
+                                     ng-class="{'has-error':infoForm.email.$touched && infoForm.email.$invalid}">
                                     <div class="input-group">
-                                        <input type="email" class="form-control" id="inputEmail" name="InputEmail"
+                                        <input type="email" class="form-control" id="email" name="email"
+                                               ng-model="subscriber.email"
                                                placeholder="Email của bạn" required>
                                         <span class="input-group-addon"><span
                                                 class="glyphicon glyphicon-asterisk"></span></span>
                                     </div>
+                                    <div class="help-block" ng-messages="infoForm.email.$error"
+                                         ng-show="infoForm.email.$touched">
+                                        <label class="control-label" ng-show="infoForm.email.$error.required">Bạn chưa
+                                            nhập địa chỉ Email</label>
+                                        <label class="control-label" ng-show="infoForm.email.$error.email">Bạn nhập địa
+                                            chỉ Email chưa chính xác</label>
+                                    </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group"
+                                     ng-class="{'has-error':infoForm.password.$touched && infoForm.password.$invalid}">
                                     <div class="input-group">
-                                        <input type="password" class="form-control" id="inputPassword" name="inputPassword"
-                                               placeholder="Mật khẩu của bạn" required>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                               ng-model="subscriber.password"
+                                               placeholder="Mật khẩu của bạn" required ng-minlength="6">
                                         <span class="input-group-addon"><span
                                                 class="glyphicon glyphicon-asterisk"></span></span>
                                     </div>
+                                    <div class="help-block" ng-messages="infoForm.password.$error"
+                                         ng-show="infoForm.password.$touched">
+                                        <label class="control-label" ng-show="infoForm.password.$error.required">Bạn
+                                            chưa nhập password</label>
+                                        <label class="control-label" ng-show="infoForm.password.$error.minlength">Mật
+                                            khẩu ít nhất chứa 6 ký tự</label>
+                                    </div>
                                 </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox"> Tôi đồng ý với <a>quy định sử dụng</a> & <a>chính sách bảo mật</a> của ECSSystem
-                                    </label>
+                                <div class="checkbox" ng-app="">
+                                    <label><input type="checkbox" id="checkbox" name="checkbox" ng-model="checkbox"
+                                                      ng-true-value="'YES'" ng-false-value="'NO'" > Tôi đồng ý với <a>quy
+                                            định sử dụng</a> & <a>chính sách bảo mật</a> của ECSSystem
+                                        </label>
+                                    <div class="help-block" ng-show="checkbox == 'NO'">
+                                        <label class="control-label">Bạn chưa đồng ý điều kiện</label>
+                                    </div>
                                 </div>
+
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
             <div class="modal-footer" style="padding: 10px 10px 20px;margin-top: 0px;">
-                <input type="submit" name="submit" id="submit" value="Tạo website của tôi" class="btn btn-primary center-block">
+                <input type="submit" ng-click="create()" name="submit" id="submit" value="Tạo website của tôi"
+                       ng-disabled="infoForm.name_shop.$invalid  ||
+                        infoForm.category_id.$invalid   || suscriber.category_id == 0
+                        || infoForm.username.$invalid  || infoForm.phone.$invalid  || infoForm.phone.$invalid
+                        || infoForm.email.$invalid || infoForm.address.$invalid || infoForm.password.$invalid || checkbox == 'NO'"
+                       class="btn btn-primary center-block">
             </div>
         </div>
 
     </div>
 </div>
+<script type="text/javascript">
+    $( document ).ready(function() {
+        var selector = '.nav li';
+
+        $(selector).on('click', function(){
+            $(selector).removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+</script>
